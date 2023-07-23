@@ -1,6 +1,14 @@
-# Nuxt 3 Minimal Starter
+#  Créer une vue de connexion avec Nuxt 3 et UnoCSS
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> Créer un  beau et élégant photofolio ce qui est utile pour montrer des projets.
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/CodeurCopieur/nuxt3-unocss-minimal-portfolio-2.git
+```
 
 ## Setup
 
@@ -31,33 +39,3 @@ pnpm run dev
 # yarn
 yarn dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
