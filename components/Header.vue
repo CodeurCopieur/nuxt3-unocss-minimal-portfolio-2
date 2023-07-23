@@ -1,7 +1,3 @@
-<script setup>
-  
-</script>
-
 <template>
  <header class="w-full fixed py-6 top-0 bg-gray-50/10 backdrop-blur-md">
     <div class="flex mx-auto w-full px-4 items-center justify-between xl:w-screen-xl xl:px-0">
