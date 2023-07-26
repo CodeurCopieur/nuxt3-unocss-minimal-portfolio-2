@@ -14,7 +14,7 @@
       </ul>
     </div>
     <div class="w-full">
-    <img src="https://avatars.githubusercontent.com/u/36073831?v=4" class="border mx-auto object-cover h-160 w-1/2 xl:w-full animate-fade-in" width="200" height="500" alt="">
+    <img src="https://avatars.githubusercontent.com/u/36073831?v=4" class="mx-auto object-contain h-160 w-1/2 xl:w-full animate-fade-in" width="200" height="500" alt="">
     </div>
   </div>
 </template>
