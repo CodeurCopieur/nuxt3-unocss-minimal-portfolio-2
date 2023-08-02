@@ -21,11 +21,15 @@
       default: new Date().getFullYear()
     },
   });
+
+  defineEmits(['close']);
 </script>
 
 <template>
  <teleport to='body'>
-  <div class="flex h-screen bg-dark-800/90 w-full top-0 left-0 z-30 overflow-scroll backdrop-blur-md fixed flex items-center justify-center">
+  <div 
+    @click="$emit('close')"
+    class="flex h-screen bg-dark-800/90 w-full top-0 left-0 z-30 overflow-scroll backdrop-blur-md fixed flex items-center justify-center">
     <div class="flex h-full relative items-center justify-center animate-fade-in">
       <div class="overflow-scroll relative">
         <img 

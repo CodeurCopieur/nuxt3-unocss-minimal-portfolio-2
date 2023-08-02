@@ -20,6 +20,7 @@
     const currentOrientation = ref('');
 
     function showFullScreen(photo, index) {
+      window.document.body.style.overflow = 'hidden'
       currentUrl.value = photo.url
       currentTitle.value = photo.title
       currentIndex.value = index
@@ -27,6 +28,12 @@
       currentOrientation.value = photo.orientation
       isFullScreen.value = true
     };
+
+
+    function closeFullScreen() {
+      window.document.body.style.overflow = 'auto'
+      isFullScreen.value = false
+    }
 </script>
 <template>
    <div class="mx-auto w-full px-4 sm:mt-0 xl:w-full xl: px-0">
@@ -43,6 +50,13 @@
         </div>
       </template>
     </div>
-    <FullScreen v-if="isFullScreen" :url="currentUrl" :index="currentIndex" :title="currentTitle" :orientation="currentOrientation" :year="currentYear"/>
+    <FullScreen 
+      v-if="isFullScreen"
+      @close="closeFullScreen"
+      :url="currentUrl" 
+      :index="currentIndex" 
+      :title="currentTitle" 
+      :orientation="currentOrientation" 
+      :year="currentYear"/>
   </div>
 </template>
