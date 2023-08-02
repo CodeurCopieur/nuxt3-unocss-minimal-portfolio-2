@@ -11,6 +11,22 @@
     {url: '/gallery/09.jpg', title: "Title Generic 9", orientation: 'portrait', year: 2021},
     {url: '/gallery/10.jpg', title: "Title Generic 10", orientation: 'landscape', year: 2020},
     ];
+
+    const isFullScreen = ref(false);
+    const currentUrl = ref('');
+    const currentTitle = ref('');
+    const currentIndex = ref(0);
+    const currentYear = ref(null);
+    const currentOrientation = ref('');
+
+    function showFullScreen(photo, index) {
+      currentUrl.value = photo.url
+      currentTitle.value = photo.title
+      currentIndex.value = index
+      currentYear.value = photo.year
+      currentOrientation.value = photo.orientation
+      isFullScreen.value = true
+    };
 </script>
 <template>
    <div class="mx-auto w-full px-4 sm:mt-0 xl:w-full xl: px-0">
@@ -19,11 +35,14 @@
     </h1>
     <div class="flex mt-10 p-10 gap-10 snap-x snap-mandatory relative overflow-x-auto">
       <template v-for="(photo, index) in photos" :key="index">
-        <div class="cursor-pointer flex flex-col snap-end overflow-visible shrink-0">
+        <div 
+          @click="showFullScreen(photo, index)"
+          class="cursor-pointer flex flex-col snap-end overflow-visible shrink-0">
           <!-- Photos -->
           <Photo :index="index+1" :photo="photo.url" :title="photo.title" :orientation="photo.orientation" :year="photo.year" />
         </div>
       </template>
     </div>
+    <FullScreen v-if="isFullScreen" :url="currentUrl" :index="currentIndex" :title="currentTitle" :orientation="currentOrientation" :year="currentYear"/>
   </div>
 </template>
